@@ -5,8 +5,6 @@ node_js:
 services:
   - docker
 
-before_install: cd client
-
 script:
   - docker --version
   - docker build -t social-application client
