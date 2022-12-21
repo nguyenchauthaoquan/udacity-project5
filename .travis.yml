@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 12
+
+services:
+  - docker
+
+before_install: cd client
+
+script:
+  - docker --version
+  - docker build -t social-application client
+  - docker tag social-application quannct/social-application:v1
+after_success:
+  - docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push quannct/social-application:v1
