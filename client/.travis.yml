@@ -5,7 +5,7 @@ node_js:
 services:
   - docker
 
-before_script: cd client
+before_install: cd client
 
 script:
   - docker --version
