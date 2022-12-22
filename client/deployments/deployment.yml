@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: social-blog-application-frontend
+  labels:
+    app: social-blog-application-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: social-blog-application-frontend
+  template:
+    metadata:
+      labels:
+        app: social-blog-application-frontend
+    spec:
+      containers:
+        - name: todoapp-frontend
+          image: quannct/social-application:v2
+          ports:
+            - containerPort: 8080
