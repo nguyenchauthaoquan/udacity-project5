@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: todoapp-frontend
-          image: quannct/social-application:v2
+          image: quannct/social-application:v1
           ports:
             - containerPort: 8080
